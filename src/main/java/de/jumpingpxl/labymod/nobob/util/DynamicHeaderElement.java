@@ -24,8 +24,8 @@ public class DynamicHeaderElement extends SettingsElement {
 			super.draw(x, y, maxX, maxY, mouseX, mouseY);
 			double absoluteY = y + lineHeight / 2D;
 			for (String line : lines) {
-				LabyMod.getInstance().getDrawUtils().drawCenteredString(line,
-						x + (maxX - x) / 2D, absoluteY, 1D);
+				LabyMod.getInstance().getDrawUtils().drawCenteredString(line, x + (maxX - x) / 2D,
+						absoluteY, 1D);
 				absoluteY += lineHeight;
 			}
 		}

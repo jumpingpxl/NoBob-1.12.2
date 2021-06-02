@@ -1,0 +1,10 @@
+{
+  "uuid": "%uuid%",
+  "author": "JumpingPxl",
+  "name": "NoBob",
+  "mainClass": "de.jumpingpxl.labymod.nobob.NoBob",
+  "description": "This add-on allows you to get the beloved (no)bob animation.",
+  "version": 2,
+  "category": 4,
+  "icon": "https://nicomiddendorf.de/jumpingaddon/NoBobIcon.png"
+}

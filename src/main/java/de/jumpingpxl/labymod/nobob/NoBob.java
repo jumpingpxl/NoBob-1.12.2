@@ -8,11 +8,6 @@ import de.jumpingpxl.labymod.nobob.util.Settings;
 import net.labymod.api.LabyModAddon;
 import net.labymod.settings.elements.SettingsElement;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.event.ClickEvent;
-import net.minecraft.util.text.event.HoverEvent;
 
 import java.util.List;
 

@@ -3,6 +3,7 @@ package de.jumpingpxl.labymod.nobob;
 import de.jumpingpxl.labymod.nobob.listener.LoginServerListener;
 import de.jumpingpxl.labymod.nobob.listener.MessageSendListener;
 import de.jumpingpxl.labymod.nobob.listener.TickListener;
+import de.jumpingpxl.labymod.nobob.util.ChatComponent;
 import de.jumpingpxl.labymod.nobob.util.Settings;
 import net.labymod.api.LabyModAddon;
 import net.labymod.settings.elements.SettingsElement;
@@ -55,19 +56,28 @@ public class NoBob extends LabyModAddon {
 
 		Minecraft minecraft = Minecraft.getMinecraft();
 		if (!minecraft.gameSettings.viewBobbing) {
-			ITextComponent textComponent = new TextComponentString(
-					"§7[§eNoBob§7] §4§lIMPORTANT: §cIn order for NoBob to work, the following setting has to"
-							+ " be enabled: ");
-			ITextComponent settingComponent = new TextComponentString(
-					"§cOptions -> Video Settings -> View Bobbing §l[CLICK]");
+			ChatComponent chatComponent = ChatComponent.create("[")
+					.setColor(ChatComponent.Color.GRAY)
+					.append("NoBob")
+					.setColor(ChatComponent.Color.YELLOW)
+					.append("] ")
+					.setColor(ChatComponent.Color.GRAY)
+					.append("IMPORTANT: ")
+					.setColor(ChatComponent.Color.DARK_RED)
+					.setBold(true)
+					.append("In order for NoBob to work, the following setting has to be enabled: ")
+					.setColor(ChatComponent.Color.RED)
+					.append("Options -> Video Settings -> View Bobbing ")
+					.setColor(ChatComponent.Color.RED)
+					.setHoverText("§cClick to enable bobbing")
+					.setClickCommand("+nobob disablebobbing")
+					.append("[CLICK]")
+					.setColor(ChatComponent.Color.RED)
+					.setBold(true)
+					.setHoverText("§cClick to enable bobbing")
+					.setClickCommand("+nobob disablebobbing");
 
-			Style style = settingComponent.getStyle();
-			style.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-					new TextComponentString("§cClick to enable bobbing")));
-			style.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "+nobob disablebobbing"));
-			settingComponent.setStyle(style);
-			textComponent.appendSibling(settingComponent);
-			minecraft.ingameGUI.getChatGUI().printChatMessage(textComponent);
+			minecraft.ingameGUI.getChatGUI().printChatMessage(chatComponent.build());
 		}
 	}
 }
